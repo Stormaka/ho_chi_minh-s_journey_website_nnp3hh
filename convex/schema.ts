@@ -15,6 +15,9 @@ const applicationTables = {
       lng: v.number(),
     }),
     imageUrl: v.optional(v.string()),
+    action: v.string(),        // Added action field
+    affect: v.string(),        // Added affect field
+    cognition: v.string(),     // Added cognition field
   }).index("by_year", ["year"]),
   
   quotes: defineTable({
@@ -37,3 +40,4 @@ export default defineSchema({
   ...authTables,
   ...applicationTables,
 });
+

@@ -212,15 +212,23 @@ function TimelineSection() {
         <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-red-200 h-full"></div>
 
         {journeyEvents.map((event, index) => (
-          <div key={event._id} className={`relative mb-12 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+          <div
+            key={event._id}
+            className="relative mb-12"
+          >
             {/* Timeline dot */}
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
               <Calendar size={16} className="text-white" />
             </div>
-
             {/* Content */}
-            <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? 'md:mr-8 md:pr-8' : 'md:ml-8 md:pl-8'} max-w-md ${index % 2 === 0 ? 'md:ml-auto' : ''}`}>
-              <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-600">
+            <div
+              className={`ml-12 md:ml-0 ${
+                index % 2 === 0
+                  ? 'md:mr-8 md:pr-8'
+                  : 'md:ml-auto md:mr-0 md:pl-8'
+              } max-w-md`}
+            >
+              <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-600 text-left">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">
                     {event.year}
@@ -232,7 +240,22 @@ function TimelineSection() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-3">{event.title}</h3>
                 <p className="text-gray-600 mb-4">{event.description}</p>
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded">
+                {event.action && (
+                  <p className="text-sm mb-1">
+                    <strong>Hành động:</strong> {event.action}
+                  </p>
+                )}
+                {event.affect && (
+                  <p className="text-sm mb-1">
+                    <strong>Cảm xúc:</strong> {event.affect}
+                  </p>
+                )}
+                {event.cognition && (
+                  <p className="text-sm mb-1">
+                    <strong>Nhận thức:</strong> {event.cognition}
+                  </p>
+                )}
+                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded mb-3 mt-2">
                   <p className="text-sm text-gray-700">
                     <strong>Ý nghĩa:</strong> {event.significance}
                   </p>

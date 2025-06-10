@@ -21,16 +21,19 @@ export const seedJourneyData = mutation({
     }
 
     // Journey events
-    const journeyEvents = [
+     const journeyEvents = [
       {
         year: 1911,
         location: "Saigon",
-        country: "French Indochina",
+        country: "France",
         title: "Khởi đầu hành trình",
         description: "Nguyễn Tất Thành rời quê hương lên tàu Amiral Latouche-Tréville với tên Ba đi tìm đường cứu nước.",
         significance: "Đây là bước khởi đầu quan trọng trong hành trình tìm đường cứu nước của Bác Hồ. Với quyết tâm cao độ, Người đã rời bỏ quê hương để tìm hiểu thế giới bên ngoài.",
         coordinates: { lat: 10.8231, lng: 106.6297 },
-      },
+        action: "Rời quê hương, lên tàu đi tìm đường cứu nước,đổi tên thành anh Ba và làm phụ bếp trên tàu Amiral Latouche-Tréville .",
+        affect: "Từ bỏ ảo tưởng cải cách cũng như hướng tới cách mạng quần chúng.",
+  cognition: "Hồ Chí Minh nhận ra bản chất tư bản, từ bỏ ảo tưởng về sự hỗ trợ từ TBCN, định hình cách mạng dựa vào quần chúng và đoàn kết quốc tế, mở ra giai đoạn mới trong hành trình cứu nước."
+},
       {
         year: 1912,
         location: "New York",
@@ -39,6 +42,9 @@ export const seedJourneyData = mutation({
         description: "Làm việc tại khách sạn Parker House ở Boston, tìm hiểu về nền dân chủ Mỹ và phong trào đấu tranh của người da đen.",
         significance: "Tại Mỹ, Bác Hồ đã chứng kiến sự bất bình đẳng chủng tộc và hiểu được rằng chủ nghĩa đế quốc không chỉ áp bức người Việt mà còn áp bức nhiều dân tộc khác.",
         coordinates: { lat: 40.7128, lng: -74.0060 },
+        action: "Làm việc, quan sát xã hội Mỹ, tiếp xúc các phong trào đấu tranh.",
+        affect: "Chuyển từ yêu nước thuần túy sang đấu tranh giai cấp.",
+        cognition: "Nhận ra cách mạng tư sản không mang tự do thực sự và đặc biệt xác định kẻ thù là chủ nghĩa đế quốc và giai cấp bóc lột."
       },
       {
         year: 1913,
@@ -48,42 +54,45 @@ export const seedJourneyData = mutation({
         description: "Làm việc tại khách sạn Carlton, học tiếng Anh và tìm hiểu về chế độ chính trị Anh.",
         significance: "Tại London, Bác Hồ đã mở rộng hiểu biết về các hệ thống chính trị khác nhau và tiếp xúc với nhiều tư tưởng tiến bộ của thời đại.",
         coordinates: { lat: 51.5074, lng: -0.1278 },
+        action: "Làm công nhân,tham gia phong trào công nhân,biểu tình.",
+        affect: "Xác định con đường cách mạng vô sản.",
+        cognition: "Nhận thức rõ hơn về vai trò giai cấp công nhân trong cách mạng; cần tổ chức chặt chẽ, đoàn kết quốc tế; và nhận ra: \"Chỉ có 2 giống người: người bóc lột và người bị bóc lột\"."
       },
       {
         year: 1917,
         location: "Paris",
         country: "France",
-        title: "Định cư tại Pháp",
+        title: "Trở về Pháp",
         description: "Chuyển đến Paris, tham gia các hoạt động chính trị và viết báo. Bắt đầu sử dụng tên Nguyễn Ái Quốc.",
-        significance: "Đây là thời kỳ Bác Hồ bắt đầu hoạt động chính trị tích cực, viết báo và tham gia vào phong trào đấu tranh của người Việt tại Pháp.",
+        significance: "Sau thế chiến I,phong trào công nhân Pháp sôi động.Đây là thời kỳ Bác Hồ bắt đầu hoạt động chính trị tích cực, viết báo và tham gia vào phong trào đấu tranh của người Việt tại Pháp.",
         coordinates: { lat: 48.8566, lng: 2.3522 },
+        action: "Tiếp cận báo chí,tổ chức công nhân,tư tưởng Marx.",
+        affect: "Định hình tư duy cách mạng quốc tế.",
+        cognition: "Nhận thức rõ bản chất bóc lột của chủ nghĩa thực dân-đế quốc;liên kết giải phóng dân tộc với cách mạng vô sản quốc tế."
       },
       {
         year: 1919,
         location: "Versailles",
         country: "France",
-        title: "Bản yêu sách 8 điều",
+        title: "Quốc tế Cộng sản + Bản yêu sách 8 điều ",
         description: "Gửi Bản yêu sách 8 điều đến Hội nghị Versailles, đòi quyền tự do dân chủ cho nhân dân Đông Dương.",
         significance: "Đây là lần đầu tiên tiếng nói của nhân dân Việt Nam được đưa ra trước diễn đàn quốc tế, đánh dấu sự ra đời của Nguyễn Ái Quốc trên chính trường.",
         coordinates: { lat: 48.8048, lng: 2.1203 },
+        action: "Gửi bản yêu sách của nhân dân An Nam đến Hội nghị Versailles,đòi quyền tự do,dân chủ;tham gia phong trào công nhân,tiếp cận Quốc tế Cộng sản.",
+        affect: "Hy vọng, tự hào đại diện cho dân tộc.",
+        cognition: "Nhận ra cần dựa vào sức mình,không trông chờ cải cách khi bản yêu sách bị từ chối,phơi bày bản chất lừa bịp của đế quốc"
       },
       {
         year: 1920,
         location: "Tours",
         country: "France",
-        title: "Tham gia Đảng Cộng sản Pháp (Tháng 7)",
+        title: "Luận cương của Leenin + Đại hội Tours",
         description: "Tham dự Đại hội Tours của Đảng Xã hội Pháp, gia nhập Đảng Cộng sản Pháp.",
         significance: "Đây là bước ngoặt quan trọng khi Bác Hồ tìm thấy con đường cách mạng đúng đắn - chủ nghĩa Mác-Lênin, định hướng cho cả cuộc đời hoạt động cách mạng.",
         coordinates: { lat: 47.3941, lng: 0.6848 },
-      },
-      {
-        year: 1920,
-        location: "Paris",
-        country: "France",
-        title: "Thành lập Hội Liên hiệp thuộc địa (Tháng 12)",
-        description: "Cùng với các nhà yêu nước khác thành lập Hội Liên hiệp thuộc địa, đấu tranh cho quyền lợi của các dân tộc thuộc địa.",
-        significance: "Việc thành lập Hội Liên hiệp thuộc địa thể hiện tầm nhìn quốc tế của Bác Hồ, liên kết đấu tranh của các dân tộc bị áp bức trên thế giới.",
-        coordinates: { lat: 48.8566, lng: 2.3522 },
+        action: "Tháng 7/1920,đọc “Luận cương về vấn đề dân tộc và thuộc địa” của Lênin. Tháng 12/1920,tham dự Đại hội Tours của Đảng Xã hội Pháp,gia nhập Đảng Cộng sản Pháp.",
+        affect: "Chuyển từ yêu nước cảm tính sang cách mạng khoa học;trở thành người cộng sản Việt Nam đầu tiên;đặt nền móng cho Đảng cộng sản Việt Nam(1930).",
+        cognition: "Nhận thức được vai trò của chủ nghĩa Mác-Lênin đối với cách mạng Việt Nam."
       },
     ];
 
