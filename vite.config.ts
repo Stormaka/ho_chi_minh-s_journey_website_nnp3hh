@@ -4,11 +4,9 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/ho_chi_minh-s_journey_website_nnp3hh/', // 👈 cấu hình base cho đúng đường dẫn khi build
   plugins: [
     react(),
-    // The code below enables dev tools like taking screenshots of your site
-    // while it is being developed on chef.convex.dev.
-    // Feel free to remove this code if you're no longer developing your app with Chef.
     mode === "development"
       ? {
           name: "inject-chef-dev",
@@ -33,7 +31,6 @@ window.addEventListener('message', async (message) => {
           },
         }
       : null,
-    // End of code for taking screenshots on chef.convex.dev.
   ].filter(Boolean),
   resolve: {
     alias: {

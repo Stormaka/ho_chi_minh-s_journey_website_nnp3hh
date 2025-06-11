@@ -6,6 +6,25 @@ import { Toaster } from "sonner";
 import { useState, useEffect } from "react";
 import { MapPin, Quote, Calendar, Globe, Menu, X } from "lucide-react";
 
+function DeCuongModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl h-[80vh] flex flex-col">
+        <div className="flex justify-between items-center p-4 border-b">
+          <h2 className="text-xl font-bold">Đề cương ôn tập</h2>
+          <button onClick={onClose} className="text-red-600 font-bold text-lg px-2">✕</button>
+        </div>
+<iframe
+  src={`https://docs.google.com/gview?url=${window.location.origin}${import.meta.env.BASE_URL}tn.pdf&embedded=true`}
+  style={{ width: '100%', height: '100vh', border: 'none' }}
+  title="Đề cương ôn tập"
+/>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -156,6 +175,8 @@ function Content() {
 }
 
 function HeroSection() {
+  const [showDeCuong, setShowDeCuong] = useState(false);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-red-800 to-red-600 text-white">
       <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -179,7 +200,14 @@ function HeroSection() {
           >
             Xem bản đồ
           </button>
+          <button
+            onClick={() => setShowDeCuong(true)}
+            className="bg-white text-red-800 font-bold py-3 px-8 rounded-lg border-2 border-yellow-500 hover:bg-yellow-100 transition-colors"
+          >
+            Đề cương ôn tập
+          </button>
         </div>
+        <DeCuongModal open={showDeCuong} onClose={() => setShowDeCuong(false)} />
       </div>
     </section>
   );
